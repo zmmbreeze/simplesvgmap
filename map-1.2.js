@@ -1,12 +1,7 @@
 /**
-* author: zhoumm
-* usage: 用于载入SVG图片
-* note:viewBox属性的值是SVG文档中的绝对位置，鼠标的坐标首先变为与容器的相对坐标，再根据比例尺变成SVG文档的绝对坐标之后，才能和viewBox进行操作。
-* 	1.0.0版本之后，由于添加了不动层mask，所以在mask下使用的鼠标位置就不需要与viewBox操作了转换成SVG文档的绝对位置，
-* 	绝对位置的概念也变成了”地图.svg“的位置了。
-* 	另外由于添加了viewBox属性而产生的缩放，x和y轴上的缩放比例是一样的，根据viewBox[2]/maxWidth（viewBox[3]/maxHeight）（取大的一个值）计算
-*       这里确保了viewBox[2]/maxWidth与viewBox[3]/maxHeight一样大，简化了运算，提高速度
+* author: zhoumm (http://www.mzhou.me)
 * version：1.2
+* license: MIT or GPL license
 */
 (function () {
 	var CEN_WD = 35;// 中点纬度
@@ -21,7 +16,6 @@
 	lambert2xy = function(latitude, longitude, scale) {
 		var fai = latitude;
 		var lamda = longitude;
-		// var scale = 5000000;//60000000;// 比例尺
 		var xa = A1 / (2 * scale * k);
 		var a1 = 15 * PII;
 		a1 = Math.tan(a1);

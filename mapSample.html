@@ -22,19 +22,22 @@
 		<script type="text/javascript" charset="utf-8" src="map-1.2.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function() { 
-			//初始化地图,"#svg"是容器，"map.svg"是地图url，"jquery.svg/"是blank.svg所在的文件夹路径，
-			//function(){...}是载入后需要执行的函数
+			//"jquery.svg/"is the path of blank.svg
+			//function(){...} what need to do after loaded
+			//change the map.svg to URI(the local URI not work)
+			//more api you can found on map-1.2.js
+			//or you can access my blog http://www.mzhou.me
 		  	map = new Map("#svg","map.svg","jquery.svg/",10,10,
 					function (){
 		  			},
 		  			{width:1024,height:800}
-		  	); //jquery object
+		  	);
 		});
 		</script>
 	</head>
 	<body class="map">
 		<div class="head">
-		<h1>地图</h1>
+		<h1>Map</h1>
 		</div>
 		<div id="svg">
 		</div>
